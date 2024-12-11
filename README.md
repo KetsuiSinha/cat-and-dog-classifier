@@ -7,13 +7,16 @@ The structure of the dataset files looks as follows:
 cats_and_dogs
 
 |__ train:
+
     |______ cats: [cat.0.jpg, cat.1.jpg ...]
     |______ dogs: [dog.0.jpg, dog.1.jpg ...]
 |__ validation:
 
     |______ cats: [cat.2000.jpg, cat.2001.jpg ...]
     |______ dogs: [dog.2000.jpg, dog.2001.jpg ...]
-|__ test: [1.jpg, 2.jpg ...]
+|__ test: 
+
+    [1.jpg, 2.jpg ...]
 
 The following instructions correspond to specific code cells, with comments indicating which step each corresponds to (e.g., # 3).
 
@@ -22,9 +25,9 @@ The following instructions correspond to specific code cells, with comments indi
 In this cell, the user is required to set the variables correctly (they should no longer equal None). The task is to create image generators for each of the three image datasets (train, validation, test). The user should use ImageDataGenerator to read, decode the images, and convert them into floating-point tensors. They should use the rescale argument to scale the pixel values from the range 0-255 to 0-1.
 For the train, validation, and test data generators, the user should use the flow_from_directory method. Parameters like batch size, directory, target size ((IMG_HEIGHT, IMG_WIDTH)), class mode, and any other required arguments must be passed in. For the test data generator, it’s important to pass shuffle=False to maintain the order of images for final predictions. The user should ensure the test dataset’s directory structure is observed.After running the code, the output should look something like:
 
-Found 2000 images belonging to 2 classes.
-Found 1000 images belonging to 2 classes.
-Found 50 images belonging to 1 class.
+    Found 2000 images belonging to 2 classes.
+    Found 1000 images belonging to 2 classes.
+    Found 50 images belonging to 1 class.
 
 
 # Cell 4
